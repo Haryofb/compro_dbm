@@ -17,7 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-route::get('/','HomeController@index')->name('home');
+Auth::routes();
+
+route::get('/','MasterController@index')->name('frontend');
 
 //menu about
 Route::get('/about','AboutController@index')->name('about');
@@ -35,3 +37,5 @@ route::get('/info','infoController@index')->name('info');
 
 //menu event
 route::get('/event','eventController@index')->name('event');
+
+Route::get('/home', 'HomeController@index')->name('home');

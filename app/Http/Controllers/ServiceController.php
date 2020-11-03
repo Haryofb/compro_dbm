@@ -13,7 +13,7 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        return view('home.service');
+        return view('frontend.home.service');
     }
 
     /**

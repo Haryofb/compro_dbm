@@ -1,4 +1,4 @@
-@extends('master')
+@extends('frontend.master')
 
 @section('content')
 
@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="card mb-3">
-                        <img class="card-img-top" src="/img/portfolio/app1.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="/frontend/img/portfolio/app1.jpg" alt="Card image cap">
                         <div class="card-body">
                         <h4 class="card-title" style="text-align:center;">DRILLING</h4>
                         </div>
@@ -19,7 +19,7 @@
                 </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
                 <div class="card mb-3">
-                    <img class="card-img-top" src="/img/portfolio/app1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="/frontend/img/portfolio/app1.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h4 class="card-title" style="text-align:center;">MINING</h4>
                     </div>
@@ -27,7 +27,7 @@
             </div>
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                 <div class="card mb-3">
-                    <img class="card-img-top" src="/img/portfolio/app1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="/frontend/img/portfolio/app1.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h4 class="card-title" style="text-align:center;">CONSTRUCTION</h4>
                     </div>
@@ -36,7 +36,7 @@
 
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="card mb-3">
-                    <img class="card-img-top" src="/img/portfolio/app1.jpg" alt="Card image cap">
+                    <img class="card-img-top" src="/frontend/img/portfolio/app1.jpg" alt="Card image cap">
                     <div class="card-body">
                     <h4 class="card-title" style="text-align:center;">SHIPPING</h4>
                     </div>

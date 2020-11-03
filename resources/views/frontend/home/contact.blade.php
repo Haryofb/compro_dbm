@@ -1,4 +1,4 @@
-<section id="contact">
+<section id="frontend.master">
     <div class="container wow fadeInUp">
         <div class="section-header">
         <h3 class="section-title">Our Contact</h3>

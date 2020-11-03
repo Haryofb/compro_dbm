@@ -8,21 +8,21 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="/img/logo-tittle.png" rel="icon">
-  <link href="/img/logo-tittle.png" rel="apple-touch-icon">
+  <link href="/frontend/img/logo-tittle.png" rel="icon">
+  <link href="/frontend/img/logo-tittle.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/frontend/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/frontend/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/frontend/lib/animate/animate.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="/css/style.css" rel="stylesheet">
+  <link href="/frontend/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: Regna
@@ -38,7 +38,7 @@
   Header
   ============================-->
 
-    @include('layout.header')
+    @include('frontend.layout.header')
 
   <!--==========================
     Hero Section
@@ -83,7 +83,7 @@
       Contact Section
     ============================-->
 
-    @include('home.contact')
+    @include('frontend.home.contact')
 
   </main>
 
@@ -92,27 +92,27 @@
   ============================-->
 
 
-  @include('layout.footer')
+  @include('frontend.layout.footer')
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="/lib/jquery/jquery.min.js"></script>
-  <script src="/lib/jquery/jquery-migrate.min.js"></script>
-  <script src="/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/lib/easing/easing.min.js"></script>
-  <script src="/lib/wow/wow.min.js"></script>
-  <script src="/lib/counterup/counterup.min.js"></script>
-  <script src="/lib/waypoints/waypoints.min.js"></script>
-  <script src="/lib/superfish/hoverIntent.js"></script>
-  <script src="/lib/superfish/superfish.min.js"></script>
+  <script src="/frontend/lib/jquery/jquery.min.js"></script>
+  <script src="/frontend/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/frontend/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/frontend/lib/easing/easing.min.js"></script>
+  <script src="/frontend/lib/wow/wow.min.js"></script>
+  <script src="/frontend/lib/counterup/counterup.min.js"></script>
+  <script src="/frontend/lib/waypoints/waypoints.min.js"></script>
+  <script src="/frontend/lib/superfish/hoverIntent.js"></script>
+  <script src="/frontend/lib/superfish/superfish.min.js"></script>
 
 
   <!-- Contact Form JavaScript File -->
-  <script src="/contactform/contactform.js"></script>
+  <script src="/frontend/contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="/js/main.js"></script>
+  <script src="/frontend/js/main.js"></script>
 
 </body>
 </html>

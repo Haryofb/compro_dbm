@@ -1,15 +1,15 @@
 <header id="header">
     <div class="container">
 
-    <div id="logo" class="pull-left"><a href="{{ route('home') }}">
-            <img src="/img/logo-web.png">
+    <div id="logo" class="pull-left"><a href="{{ route('frontend') }}">
+            <img src="/frontend/img/logo-web.png">
             <!-- Uncomment below if you prefer to use a text logo -->
             <!--<h1><a href="#hero">Regna</a></h1>--></a>
     </div>
 
         <nav id="nav-menu-container">
             <ul class="nav-menu">
-            <li><a href="{{ route ('home') }}">BERANDA</a></li>
+            <li><a href="{{ route ('frontend') }}">BERANDA</a></li>
             <li class="menu-has-children"><a href="#about">TENTANG KAMI</a>
                 <ul>
                     <li><a href="{{ route ('about') }}">TENTANG KAMI</a></li>
@@ -27,6 +27,8 @@
                     <li><a href="#">INDONESIA</a></li>
                     <li><a href="#">INGGRIS</a></li>
                 </ul>
+            <li><a href="{{ route('login') }}">Login</a></li>
+
             </li>
 
             {{-- <li class="menu-has-children"><a href="">Drop Down</a>

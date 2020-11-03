@@ -13,7 +13,7 @@ class InfoController extends Controller
      */
     public function index()
     {
-        return view('home.info');
+        return view('frontend.home.info');
     }
 
     /**

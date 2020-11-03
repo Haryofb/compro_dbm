@@ -17,7 +17,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        return view('home.about');
+        return view('frontend.home.about');
     }
 
     /**
@@ -31,7 +31,7 @@ class AboutController extends Controller
         $pos = Position::all();
         $emp = Employee::all();
         $quo = Quote::all();
-        return view('home.stakeholder',[
+        return view('frontend.home.stakeholder',[
             'div' => $div,
             'pos' => $pos,
             'emp' => $emp,
@@ -49,7 +49,7 @@ class AboutController extends Controller
      */
     public function statistic()
     {
-        return view('home.statistic');
+        return view('frontend.home.statistic');
     }
 
     /**

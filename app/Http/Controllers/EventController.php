@@ -13,7 +13,7 @@ class EventController extends Controller
      */
     public function index()
     {
-        return view('home.event');
+        return view('frontend.home.event');
     }
 
     /**

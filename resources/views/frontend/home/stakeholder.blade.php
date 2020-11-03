@@ -1,4 +1,4 @@
-@extends('master')
+@extends('frontend.master')
 
 @section('content')
 
@@ -12,7 +12,7 @@
                 @foreach ($quo as $q)
                 <div class="col-lg-4 col-md-6">
                     <div class="member">
-                        <div class="pic"><img src="/img/team-1.jpg" alt=""></div>
+                        <div class="pic"><img src="/frontend/img/team-1.jpg" alt=""></div>
                         <h4>{{$q->employee->name}}</h4>
                         <span>{{$q->position->name}} of {{$q->divition->name}}</span>
                         <br>

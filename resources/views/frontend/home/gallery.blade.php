@@ -1,4 +1,4 @@
-@extends('master')
+@extends('frontend.master')
 
 @section('content')
 
@@ -23,7 +23,7 @@
       <div class="row" id="portfolio-wrapper">
         <div class="col-lg-3 col-md-6 portfolio-item filter-app">
           <a href="">
-            <img src="/img/portfolio/app1.jpg" alt="">
+            <img src="/frontend/img/portfolio/app1.jpg" alt="">
             <div class="details">
               <h4>App 1</h4>
               <span>Alored dono par</span>

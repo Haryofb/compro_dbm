@@ -10,8 +10,8 @@ class Picture extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
-    public function cat_picture()
+    public function catpicture()
     {
-        return $this->belongsTo('App\Category_picture');
+        return $this->belongsTo(Catpicture::class,'category_id');
     }
 }

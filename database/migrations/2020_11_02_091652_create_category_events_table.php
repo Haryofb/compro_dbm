@@ -28,6 +28,6 @@ class CreateCategoryEventsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_event');
+        Schema::dropIfExists('category_events');
     }
 }

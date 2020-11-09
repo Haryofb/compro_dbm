@@ -6,8 +6,15 @@
     <div class="container wow fadeIn" >
         <div class="section-header" >
         <h3 class="section-title">Informasi</h3>
-        <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
+        <div class="col-lg-12" >
+            <ul id="services-flters">
+              <li data-filter=".1, .2, .3, .4" class="filter-active">All</li>
+              {{-- @foreach ($cat as $cat)
+              <li data-filter=".{{$cat->id}}">{{$cat->name}}</li>
+              @endforeach --}}
+          </ul>
+         </div>
+    </div>
             <div class="row">
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="card mb-3">

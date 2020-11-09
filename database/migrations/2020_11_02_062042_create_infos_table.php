@@ -18,6 +18,7 @@ class CreateInfosTable extends Migration
             $table->integer('category_id')->unsigned();
             $table->string('name');
             $table->string('description');
+            $table->string('picture')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

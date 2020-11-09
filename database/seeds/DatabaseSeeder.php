@@ -17,6 +17,10 @@ class DatabaseSeeder extends Seeder
             PositionSeeder::class,
             EmployeeSeeder::class,
             QouteSeeder::class,
+            CategoryPictureSeeder::class,
+            GallerySeeder::class,
+            CategoryInfoSeeder::class,
+
             ]
         );
     }

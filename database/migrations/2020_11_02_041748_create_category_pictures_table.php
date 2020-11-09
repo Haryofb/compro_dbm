@@ -28,6 +28,6 @@ class CreateCategoryPicturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category_picture');
+        Schema::dropIfExists('category_pictures');
     }
 }

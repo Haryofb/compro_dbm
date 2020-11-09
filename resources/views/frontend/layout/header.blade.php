@@ -1,14 +1,16 @@
 <header id="header">
     <div class="container">
 
-    <div id="logo" class="pull-left"><a href="{{ route('frontend') }}">
-            <img src="/frontend/img/logo-web.png">
+    <div id="logo" class="pull-left">
+        {{-- <a href="{{ route('frontend') }}">
+            <img src="/frontend/img/logo-web.png"></img> --}}
             <!-- Uncomment below if you prefer to use a text logo -->
-            <!--<h1><a href="#hero">Regna</a></h1>--></a>
+            <h1><a href="{{ route('frontend') }}">
+            <img src="/frontend/img/logo-tittle.png"></img></h1>
     </div>
 
         <nav id="nav-menu-container">
-            <ul class="nav-menu">
+            <ul class="nav-menu justify-content-center">
             <li><a href="{{ route ('frontend') }}">BERANDA</a></li>
             <li class="menu-has-children"><a href="#about">TENTANG KAMI</a>
                 <ul>
@@ -30,25 +32,6 @@
             <li><a href="{{ route('login') }}">Login</a></li>
 
             </li>
-
-            {{-- <li class="menu-has-children"><a href="">Drop Down</a>
-                <ul>
-                <li><a href="#">Drop Down 1</a></li>
-                <li class="menu-has-children"><a href="#">Drop Down 2</a>
-                    <ul>
-                    <li><a href="#">Deep Drop Down 1</a></li>
-                    <li><a href="#">Deep Drop Down 2</a></li>
-                    <li><a href="#">Deep Drop Down 3</a></li>
-                    <li><a href="#">Deep Drop Down 4</a></li>
-                    <li><a href="#">Deep Drop Down 5</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Drop Down 3</a></li>
-                <li><a href="#">Drop Down 4</a></li>
-                <li><a href="#">Drop Down 5</a></li>
-                </ul>
-            </li>
-            <li><a href="#contact">Contact Us</a></li> --}}
             </ul>
         </nav><!-- #nav-menu-container -->
     </div>

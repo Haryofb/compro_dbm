@@ -10,8 +10,9 @@
                 <table class="table table-striped table-bordered " id="category_picture">
                     <thead>
                         <tr>
-                            <th>id</th>
+                            <th>Id</th>
                             <th>Nama</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                 </table>
@@ -33,6 +34,7 @@ $(document).ready(function() {
         columns:[
             {data:'id',name:'id'},
             {data:'name',name:'name'},
+            {data:'action',name:'action'},
         ],
         order:[[0,'asc']]
     });

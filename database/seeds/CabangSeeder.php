@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CategoryPictureSeeder extends Seeder
+class CabangSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,16 +20,9 @@ class CategoryPictureSeeder extends Seeder
                     [
                         'name' => 'ho',
                     ],
-                    [
-                        'name' => 'pit',
-                    ],
-                    [
-                        'name' => 'dasdas',
-                    ],
-
                 ];
                 foreach ($data as $d) {
-                    DB::table('category_pictures')->insert([
+                    DB::table('cabangs')->insert([
                         'name'    => $d['name'],
                     ]);
                 }

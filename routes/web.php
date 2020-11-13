@@ -43,10 +43,14 @@ route::get('/event','FrontendEventController@index')->name('event');
 //BACKEND
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Category Picture
-Route::get('/backend_category_picture', 'BackendCategoryPictureController@index')->name('backend.category.picture.home');
-Route::get('/backend_category_picture/add', 'BackendCategoryPictureController@create')->name('backend.category.picture.add');
-Route::post('/backend_category_picture/store', 'BackendCategoryPictureController@store')->name('backend.category.picture.store');
-Route::get('/backend_category_picture/edit/{id}', 'BackendCategoryPictureController@edit');
-Route::put('/backend_category_picture/update', 'BackendCategoryPictureController@update')->name('backend.category.picture.update');
-Route::get('/backend_category_picture/delete/{id}', 'BackendCategoryPictureController@destroy');
+//Category Divition
+Route::resource('backend_divition','BackendDivitionController');
+
+//Category Position
+Route::resource('backend_position','BackendPositionController');
+
+//Category Cabang
+Route::resource('backend_cabang','BackendCabangController');
+
+//Category Employee
+Route::resource('backend_employee','BackendEmployeeController');

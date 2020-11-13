@@ -27,14 +27,14 @@ class FrontendAboutController extends Controller
      */
     public function stakeholder()
     {
-        $div = Divition::all();
-        $pos = Position::all();
-        $emp = Employee::all();
+        // $div = Divition::all();
+        // $pos = Position::all();//ambil data posisi all
+        // $emp = Employee::all();
         $quo = Quote::all();
         return view('frontend.home.stakeholder',[
-            'div' => $div,
-            'pos' => $pos,
-            'emp' => $emp,
+        //     'div' => $div,
+        //     'pos' => $pos,
+        //     'emp' => $emp,
             'quo' => $quo,
         ]);
 

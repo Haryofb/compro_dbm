@@ -10,6 +10,8 @@ class Employee extends Model
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
+    protected $guarded = [];
+
     public function divition()
     {
         return $this->belongsTo('App\Divition');
@@ -18,6 +20,11 @@ class Employee extends Model
     public function position()
     {
         return $this->belongsTo('App\Position');
+    }
+
+    public function cabang()
+    {
+        return $this->belongsTo('App\Cabang');
     }
 
     public function quote()

@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Position extends Model
+class Cabang extends Model
 {
+    protected $table = 'cabangs';
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
@@ -14,11 +15,11 @@ class Position extends Model
 
     public function employee()
     {
-        return $this->hasMany('App\Employee');
+        return $this->hasMany(Employee::class);
+    }
+    public function info()
+    {
+        return $this->hasMany(Info::class);
     }
 
-    public function quote()
-    {
-        return $this->hasMany('App\Quote');
-    }
 }

@@ -4,16 +4,18 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Symfony\Polyfill\Intl\Idn\Info;
 
-class Picture extends Model
+class Catinfo extends Model
 {
+    protected $table = 'infos';
     use SoftDeletes;
     protected $dates = ['deleted_at'];
 
     protected $guarded = [];
 
-    public function catpicture()
+    public function cabang()
     {
-        return $this->belongsTo(Catpicture::class,'category_id');
+        return $this->belongsTo('App\Cabang');
     }
 }

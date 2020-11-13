@@ -24,10 +24,10 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/backend/#" class="nav-link ">
+            <a href="{{route('home')}}" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Dashboard
+                DASHBOARD
               </p>
             </a>
           </li>
@@ -36,31 +36,35 @@
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Category
+                MASTER
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('backend.category.picture.home')}}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Category Picture</p>
+                <a href="{{route('backend_divition.index')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>DIVITION</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Category Info</p>
+                <a href="{{route('backend_position.index')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>POSITION</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('backend_cabang.index')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>CABANG</p>
                 </a>
               </li>
             </ul>
-          </li>
-
           <li class="nav-item">
-            <a href="/backend/pages/gallery.html" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
+            <a href="{{route('backend_employee.index')}}" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
               <p>
-                Gallery
+                EMPLOYEE
               </p>
             </a>
           </li>

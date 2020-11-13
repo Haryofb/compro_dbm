@@ -15,16 +15,17 @@ class CreateInfosTable extends Migration
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
+            // $table->integer('category_id')->unsigned();
             $table->string('name');
             $table->string('description');
+            $table->integer('cabang_id')->unsigned();
             $table->string('picture')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
 
         Schema::table('infos', function (Blueprint $table) {
-            $table->foreign('category_id')->references('id')->on('category_infos');
+            $table->foreign('cabang_id')->references('id')->on('cabangs');
         });
 
     }

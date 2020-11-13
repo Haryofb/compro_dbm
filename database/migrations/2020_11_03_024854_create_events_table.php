@@ -15,17 +15,18 @@ class CreateEventsTable extends Migration
     {
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
+            // $table->integer('category_id')->unsigned();
             $table->string('name');
             $table->string('description');
             $table->date('date');
+            // $table->integer('cabang_id')->unsigned();
             $table->string('picture')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
-        Schema::table('events', function (Blueprint $table) {
-            $table->foreign('category_id')->references('id')->on('category_events');
-        });
+        // Schema::table('events', function (Blueprint $table) {
+        //     $table->foreign('cabang_id')->references('id')->on('cabangs');
+        // });
     }
 
     /**

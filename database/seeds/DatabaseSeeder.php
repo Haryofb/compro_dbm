@@ -15,11 +15,12 @@ class DatabaseSeeder extends Seeder
             [
             DivitionSeeder::class,
             PositionSeeder::class,
+            CabangSeeder::class,
             EmployeeSeeder::class,
             QouteSeeder::class,
-            CategoryPictureSeeder::class,
-            GallerySeeder::class,
-            CategoryInfoSeeder::class,
+            // CategoryPictureSeeder::class,
+            // GallerySeeder::class,
+            // CategoryInfoSeeder::class,
 
             ]
         );

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePicturesTable extends Migration
+class CreateOreTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreatePicturesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pictures', function (Blueprint $table) {
+        Schema::create('ore', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('category_id')->unsigned();
+            $table->date('date');
+            $table->integer('stock');
             $table->softDeletes();
             $table->timestamps();
-        });
-
-        Schema::table('pictures', function (Blueprint $table) {
-            $table->foreign('category_id')->references('id')->on('category_pictures');
         });
     }
 
@@ -33,6 +29,6 @@ class CreatePicturesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('picture');
+        Schema::dropIfExists('ore');
     }
 }

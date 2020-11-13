@@ -18,7 +18,8 @@ class CreateEmployeesTable extends Migration
             $table->string('name');
             $table->integer('divition_id')->unsigned();
             $table->integer('position_id')->unsigned();
-            $table->string('picture');
+            $table->integer('cabang_id')->unsigned();
+            $table->string('picture')->nullable();
             $table->softDeletes();
             $table->timestamps();
             });
@@ -26,7 +27,8 @@ class CreateEmployeesTable extends Migration
         Schema::table('employees', function (Blueprint $table) {
             $table->foreign('divition_id')->references('id')->on('divitions');
             $table->foreign('position_id')->references('id')->on('positions');
-            });
+            $table->foreign('cabang_id')->references('id')->on('cabangs');
+        });
         }
 
     /**

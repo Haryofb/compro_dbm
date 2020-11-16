@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cabang;
+use App\Info;
 
 class FrontendInfoController extends Controller
 {
@@ -11,9 +13,32 @@ class FrontendInfoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('frontend.home.info');
+        // $divition = Divition::all();
+        // $position = Position::all();
+        $cabang = Cabang::all();
+
+        $info = Info::with(['cabang'])->get();
+        // var_dump($category);
+        if($request->ajax()){
+            return datatables()->of($info)
+            ->addcolumn('action',function($data){
+                $button = '<a href="javascript:void(0)" data-toggle="tootip"  data-id="'.$data->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit-post"><i class="far fa-edit"></i> Edit</a>';
+                $button .= '&nbsp;&nbsp;';
+                $button .= '<button type="button" name="delete" id="'.$data->id.'" class="delete btn btn-danger btn-sm"><i class="far fa-trash-alt"></i> Delete</button>';
+                return $button;
+            })
+            ->rawColumns(['action'])
+            ->addIndexColumn()
+            ->make(true);
+        }
+
+        return view('frontend.home.info',compact('info','cabang'));
+
+        // return view('backend.Info.home',compact('Info','divition','position','cabang'));
+        // return json_encode($Info, JSON_PRETTY_PRINT);
+        // return $Info;
     }
 
     /**

@@ -25,9 +25,9 @@ class BackendEmployeeController extends Controller
 
      public function index(Request $request)
     {
-        // $divition = Divition::all();
-        // $position = Position::all();
-        // $cabang = Cabang::all();
+        $divition = Divition::all();
+        $position = Position::all();
+        $cabang = Cabang::all();
 
         $employee = Employee::with(['divition','position','cabang'])->get();
         // var_dump($category);
@@ -44,7 +44,7 @@ class BackendEmployeeController extends Controller
             ->make(true);
         }
 
-        return view('backend.employee.home',compact('employee'));
+        return view('backend.employee.home',compact('employee','divition','position','cabang'));
 
         // return view('backend.employee.home',compact('employee','divition','position','cabang'));
         // return json_encode($employee, JSON_PRETTY_PRINT);
@@ -81,7 +81,7 @@ class BackendEmployeeController extends Controller
     public function edit($id)
     {
         $where = array('id' => $id);
-        $post  = Employee::where($where)->first();
+        $post  = Employee::with(['divition','position','cabang'])->where($where)->first();
 
         return response()->json($post);
     }

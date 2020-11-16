@@ -54,3 +54,9 @@ Route::resource('backend_cabang','BackendCabangController');
 
 //Category Employee
 Route::resource('backend_employee','BackendEmployeeController');
+
+//Category Info
+Route::resource('backend_info','BackendInfoController');
+
+//Category event
+Route::resource('backend_event','BackendEventController');

@@ -68,6 +68,22 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('backend_info.index')}}" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+              <p>
+                INFO
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{route('backend_event.index')}}" class="nav-link">
+                <i class="nav-icon far fa-image"></i>
+              <p>
+                EVENT
+              </p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

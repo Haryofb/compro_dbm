@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Symfony\Polyfill\Intl\Idn\Info;
 
-class Catinfo extends Model
+
+class Info extends Model
 {
     protected $table = 'infos';
     use SoftDeletes;

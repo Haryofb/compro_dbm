@@ -17,8 +17,4 @@ class Position extends Model
         return $this->hasMany('App\Employee');
     }
 
-    public function quote()
-    {
-        return $this->hasMany('App\Quote');
-    }
 }

@@ -27,8 +27,5 @@ class Employee extends Model
         return $this->belongsTo('App\Cabang');
     }
 
-    public function quote()
-    {
-        return $this->hasMany('App\Quote');
-    }
+
 }

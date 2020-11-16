@@ -2,24 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
+use App\Info;
+// use App\Divition;
+// use App\Position;
+use App\Cabang;
+
 use Illuminate\Http\Request;
 
-class FrontendEventController extends Controller
+class BackendInfoController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+
+    public function datatables()
+    {
+        return datatables ( Info::all())->toJson();
+    }
+
+
+     public function index(Request $request)
     {
         // $divition = Divition::all();
         // $position = Position::all();
-        $event = Event::all();
+        $cabang = Cabang::all();
+
+        $info = Info::with(['cabang'])->get();
         // var_dump($category);
         if($request->ajax()){
-            return datatables()->of($event)
+            return datatables()->of($info)
             ->addcolumn('action',function($data){
                 $button = '<a href="javascript:void(0)" data-toggle="tootip"  data-id="'.$data->id.'" data-original-title="Edit" class="edit btn btn-info btn-sm edit-post"><i class="far fa-edit"></i> Edit</a>';
                 $button .= '&nbsp;&nbsp;';
@@ -31,46 +44,34 @@ class FrontendEventController extends Controller
             ->make(true);
         }
 
-        return view('frontend.home.event',compact('event'));
+        return view('backend.info.home',compact('info','cabang'));
 
         // return view('backend.Info.home',compact('Info','divition','position','cabang'));
         // return json_encode($Info, JSON_PRETTY_PRINT);
         // return $Info;
     }
 
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
-    }
+        $id = $request->id;
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+        $post   =   Info::updateOrCreate(['id' => $id],
+                    [
+                        'name' => $request->name,
+                        'cabang_id' => $request->cabang_id,
+                        'picture' => $request->picture,
+                        'description' => $request->description,
 
+
+                    ]);
+
+        return response()->json($post);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -79,19 +80,10 @@ class FrontendEventController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
+        $where = array('id' => $id);
+        $post  = Info::with(['cabang'])->where($where)->first();
+        // console.log($post);
+        return response()->json($post);
     }
 
     /**
@@ -102,6 +94,8 @@ class FrontendEventController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $post = Info::where('id',$id)->delete();
+
+        return response()->json($post);
     }
 }

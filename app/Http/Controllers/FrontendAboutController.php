@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Divition;
 use App\Employee;
 use App\Position;
-use App\Quote;
 use Illuminate\Http\Request;
 
 class FrontendAboutController extends Controller
@@ -30,12 +29,14 @@ class FrontendAboutController extends Controller
         // $div = Divition::all();
         // $pos = Position::all();//ambil data posisi all
         // $emp = Employee::all();
-        $quo = Quote::all();
+        $dir = Employee::where('position_id','1')->first();
+        $emp = Employee::where('position_id','2')->get();
         return view('frontend.home.stakeholder',[
         //     'div' => $div,
         //     'pos' => $pos,
         //     'emp' => $emp,
-            'quo' => $quo,
+            'emp' => $emp,
+            'dir' => $dir,
         ]);
 
         // return view('home.stakeholder');

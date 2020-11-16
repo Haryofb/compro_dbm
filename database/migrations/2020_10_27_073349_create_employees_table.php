@@ -20,6 +20,7 @@ class CreateEmployeesTable extends Migration
             $table->integer('position_id')->unsigned();
             $table->integer('cabang_id')->unsigned();
             $table->string('picture')->nullable();
+            $table->string('quote')->nullable();
             $table->softDeletes();
             $table->timestamps();
             });

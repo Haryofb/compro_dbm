@@ -14,7 +14,7 @@ class DivitionSeeder extends Seeder
         {
             $data = [
                 [
-                    'name' => 'Stakeholder',
+                    'name' => 'DBM',
                 ],
                 [
                     'name' => 'Human Resouce & General Affair',

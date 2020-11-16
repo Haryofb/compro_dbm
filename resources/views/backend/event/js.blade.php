@@ -16,21 +16,20 @@
         $('#button-simpan').val("create-post"); //valuenya menjadi create-post
         $('#id').val(''); //valuenya menjadi kosong
         $('#form-tambah-edit').trigger("reset"); //mereset semua input dll didalamnya
-        $('#modal-judul').html("Tambah Karyawan Baru"); //valuenya tambah pegawai baru
+        $('#modal-judul').html("Tambah Kategori Baru"); //valuenya tambah pegawai baru
         $('#tambah-edit-modal').modal('show'); //modal tampil
     });
 
     //MULAI DATATABLE
     //script untuk memanggil data json dari server dan menampilkannya berupa datatable
     $(document).ready(function () {
-        $('#table_employee').DataTable({
+        $('#table_event').DataTable({
             // "scrollY": "280px",
             // "scrollCollapse": true,
-
-            processing :false,
+            processing :true,
         serverSide :true,
         ajax :{
-            url:"{{ route('backend_employee.index')}}",
+            url:"{{ route('backend_event.index')}}",
             type:'GET'
         },
         columns:[
@@ -43,16 +42,12 @@
             name:'name'
             },
             {
-            data:'divition.name',
-            name:'divition'
+            data:'date',
+            name:'date'
             },
             {
-            data:'position.name',
-            name:'position'
-            },
-            {
-            data:'cabang.name',
-            name:'cabang'
+            data:'description',
+            name:'description'
             },
             {
             data:'picture',
@@ -79,14 +74,14 @@
                 $.ajax({
                     data: $('#form-tambah-edit')
                         .serialize(), //function yang dipakai agar value pada form-control seperti input, textarea, select dll dapat digunakan pada URL query string ketika melakukan ajax request
-                    url: "{{ route('backend_employee.store') }}", //url simpan data
+                    url: "{{ route('backend_event.store') }}", //url simpan data
                     type: "POST", //karena simpan kita pakai method POST
                     dataType: 'json', //data tipe kita kirim berupa JSON
                     success: function (data) { //jika berhasil
                         $('#form-tambah-edit').trigger("reset"); //form reset
                         $('#tambah-edit-modal').modal('hide'); //modal hide
                         $('#tombol-simpan').html('Simpan'); //tombol simpan
-                        var oTable = $('#table_employee').dataTable(); //inialisasi datatable
+                        var oTable = $('#table_event').dataTable(); //inialisasi datatable
                         oTable.fnDraw(false); //reset datatable
                         iziToast.success({ //tampilkan iziToast dengan notif data berhasil disimpan pada posisi kanan bawah
                             title: 'Data Berhasil Disimpan',
@@ -108,17 +103,16 @@
     //ketika class edit-post yang ada pada tag body di klik maka
     $('body').on('click', '.edit-post', function () {
         var data_id = $(this).data('id');
-        $.get('backend_employee/' + data_id + '/edit', function (data) {
+        $.get('backend_event/' + data_id + '/edit', function (data) {
             $('#modal-judul').html("Edit Post");
             $('#tombol-simpan').val("edit-post");
             $('#tambah-edit-modal').modal('show');
-                console.log(data.position.name);
+
             //set value masing-masing id berdasarkan data yg diperoleh dari ajax get request diatas
             $('#id').val(data.id);
             $('#name').val(data.name);
-            $('#divition_id').val(data.divition.id);
-            $('#position_id').val(data.position.id);
-            $('#cabang_id').val(data.cabang.id);
+            $('#description').val(data.description);
+            $('#date').val(data.date);
             $('#picture').val(data.picture);
 
         })
@@ -134,7 +128,7 @@
     $('#tombol-hapus').click(function () {
         $.ajax({
 
-            url: "backend_employee/" + dataId, //eksekusi ajax ke url ini
+            url: "backend_event/" + dataId, //eksekusi ajax ke url ini
             type: 'delete',
             beforeSend: function () {
                 $('#tombol-hapus').text('Hapus Data'); //set text untuk tombol hapus
@@ -142,7 +136,7 @@
             success: function (data) { //jika sukses
                 setTimeout(function () {
                     $('#konfirmasi-modal').modal('hide'); //sembunyikan konfirmasi modal
-                    var oTable = $('#table_employee').dataTable();
+                    var oTable = $('#table_event').dataTable();
                     oTable.fnDraw(false); //reset datatable
                 });
                 iziToast.warning({ //tampilkan izitoast warning

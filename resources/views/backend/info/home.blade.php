@@ -4,21 +4,20 @@
     <div class="container" style="padding: 30px;">
         <div class="card">
             <div class="card-header">
-              <h3 class="text-center">MASTER EMPLOYEE</h3>
+              <h3 class="text-center">MASTER INFO</h3>
             </div>
             <div class="card-body">
                   <!-- MULAI TOMBOL TAMBAH -->
-                  <a href="javascript:void(0)" class="btn btn-info" id="tombol-tambah">Tambah Master</a>
+                  <a href="javascript:void(0)" class="btn btn-info" id="tombol-tambah">Tambah Info</a>
                   <br><br>
                   <!-- AKHIR TOMBOL -->
-                <table class="table table-striped table-bordered " id="table_employee" style="width:100%">
+                <table class="table table-striped table-bordered " id="table_info">
                     <thead>
                         <tr>
                             <th>Id</th>
                             <th>Nama</th>
-                            <th>Divition</th>
-                            <th>Position</th>
                             <th>Cabang</th>
+                            <th>Description</th>
                             <th>Picture</th>
                             <th>Action</th>
                         </tr>
@@ -50,36 +49,14 @@
                                             value="" required>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Divition</label>
-                                    <div class="col-sm-12">
-                                        <select name="divition_id" id="divition_id" class="form-control required">
-                                            @foreach ($divition as $d)
-                                            <option value="{{$d->id}}">
-                                                {{$d->name}}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="name" class="col-sm-12 control-label">Position</label>
-                                    <div class="col-sm-12">
-                                        <select name="position_id" id="position_id" class="form-control required">
-                                            @foreach ($position as $p)
-                                            <option value="{{$p->id}}">
-                                                {{$p->name}}
-                                            </option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div> <div class="form-group">
                                     <label for="name" class="col-sm-12 control-label">Cabang</label>
                                     <div class="col-sm-12">
                                         <select name="cabang_id" id="cabang_id" class="form-control required">
-                                            @foreach ($cabang as $c)
-                                            <option value="{{$c->id}}">
-                                                {{$c->name}}
+                                            @foreach ($cabang as $cabang)
+                                            <option value="{{$cabang->id}}">
+                                                {{$cabang->name}}
                                             </option>
                                             @endforeach
                                         </select>
@@ -89,6 +66,13 @@
                                     <label for="name" class="col-sm-12 control-label">Picture</label>
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control" id="picture" name="picture"
+                                            value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="name" class="col-sm-12 control-label">Description</label>
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="description" name="description"
                                             value="">
                                     </div>
                                 </div>
@@ -123,7 +107,7 @@
                 </div>
                 <div class="modal-body">
                     <p><b>Jika menghapus data ini maka</b></p>
-                    <p>*data kategori tersebut hilang selamanya, apakah anda yakin?</p>
+                    <p>*data tersebut hilang selamanya, apakah anda yakin?</p>
                 </div>
                 <div class="modal-footer bg-whitesmoke br">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -158,6 +142,6 @@ $(document).ready(function() {
 } );
 </script> --}}
 
-@include('backend.employee.js')
+@include('backend.info.js')
 
 @endsection

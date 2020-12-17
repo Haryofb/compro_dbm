@@ -80,6 +80,7 @@
             <a href="{{route('backend_event.index')}}" class="nav-link">
                 <i class="nav-icon far fa-image"></i>
               <p>
+
                 EVENT
               </p>
             </a>
